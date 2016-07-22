@@ -19,7 +19,6 @@ if __name__ == '__main__':
 
     
     spawnpoints=Spawns('poke.json')
-    #print(json.dumps(spawnpoints._jsonData))
     spawnpoints.remove_duplicates()
     spawnpoints.save('poke2.json')
 
@@ -41,6 +40,7 @@ if __name__ == '__main__':
                 print pokemon
                 print pokemon.get_json()
                 spawnpoints.additem(pokemon)
+                spawnpoints.save('pokeinprogress.json')
         except Exception as e:
             print "exception:", e
             time.sleep(1)

@@ -29,7 +29,7 @@ class Pokemon():
 
     def get_json(self):
         location = self.get_location()
-        data = {'pokemon':str(self.get_name()),'id':str(self.get_id()),'lat':str(location['latitude']),'long':str(location['longitude']),'time':str(int(self.get_expires_timestamp() - time.time()))}
+        data = {'pokemon':str(self.get_name()),'id':str(self.get_id()),'lat':str(location['latitude']),'long':str(location['longitude']),'expires':str(int(self.get_expires_timestamp() - time.time())),'time':str(time.strftime("%H:%M",time.localtime()))}
         #data = [ ('pokemon',self.get_name()),('id',self.get_id()),('lat',location['latitude']),('long',location['longitude']),('time',self.get_expires_timestamp() - time.time()) ]
         return data
         #return json.dumps(data,sort_keys=True,  indent=4, ensure_ascii=True)
