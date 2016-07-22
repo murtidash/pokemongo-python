@@ -4,9 +4,11 @@ import time
 
 class Pokemon():
     _meta = None
+    _json_data = None
 
     def __init__(self, meta):
         self._meta = meta
+        self._json_data = None
     
     def get_location(self):
         return {'latitude': self._meta['latitude'], 'longitude': self._meta['longitude']}
@@ -33,4 +35,3 @@ class Pokemon():
                                                      location['longitude'],
                                                      int(self.get_expires_timestamp() - time.time())
                                                      )
-    
